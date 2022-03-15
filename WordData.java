@@ -10,6 +10,7 @@ public class WordData {
   }
 
   // I don't like how the information is handled; works for now but its not very clean.
+  // is there a way to take an array as a parameter in one line? 
   public void initalizeWords() {
     String a[] = {"briskly", "quickly", "instantly"};
     WordLevels briskly = new WordLevels(a);
@@ -21,9 +22,6 @@ public class WordData {
     WordLevels obviously = new WordLevels(c);
     wrd[2] = obviously;
   }
-
-  // test, change name
-  public void inputWord()
 
   public int getLength() {
     return wrd.length;
