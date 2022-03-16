@@ -1,6 +1,7 @@
 /*
 Note that this is all a proof of concept for now
 
+Folder stuff isn
 */
 public class Main {
   public static void main(String[] args) {

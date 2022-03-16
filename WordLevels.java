@@ -29,11 +29,11 @@ public class WordLevels {
     this.active = active;
   }
 
-  public String getShownWord() {
+  public String getActiveWord() {
     return shownWord;
   }
 
-  public Boolean getActive() {
+  public Boolean getIfActive() {
     return active;
   }
 

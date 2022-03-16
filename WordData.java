@@ -1,11 +1,10 @@
 /*
-This class is currently a bit of a mess
+This class is currently a bit of a mess, needs to be spread out to others
 */
 public class WordData {
   // switch it to a 2D array? move to SaveData? set values here?
   private WordLevels wrd[] = new WordLevels[3];
 
-  
   public WordData() {
   }
 
@@ -27,31 +26,19 @@ public class WordData {
     return wrd.length;
   }
 
-  // Fetches the active words, will be expanded to fetch based on situations
-  // overlaps a bit in purpose with Runner, fine for now
-  public String getWords() {
-    String words = "Your options are: ";
-    for (int i=0; i<this.getLength(); i++) {
-      if (wrd[i].getActive()) {
-        if (i == this.getLength()-1) {
-          words += "and " + wrd[i].getShownWord();
-        } else {
-          if (i == this.getLength()-2){
-            words += wrd[i].getShownWord() + ", ";       
-          } else {
-            words += wrd[i].getShownWord() + " ";
-          }
-        }
-      }
-    }
-    return words;
+  // just connecting down to WordLevels
+  public String getShownWord(int i) {
+    return wrd[i].getActiveWord();
+  }
+  public Boolean getActive(int i) {
+    return wrd[i].getIfActive();
   }
 
   // checking each word if its in the array and active
   public Boolean checkWord(String word) {
     for (int i=0; i<this.getLength(); i++) {
-      if (wrd[i].getActive()) { 
-        if (word.equals(wrd[i].getShownWord())) {
+      if (wrd[i].getIfActive()) { 
+        if (word.equals(wrd[i].getActiveWord())) {
           return true;
         }
       }

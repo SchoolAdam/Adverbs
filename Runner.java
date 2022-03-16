@@ -24,7 +24,7 @@ public class Runner {
   private void runScript(int index, SaveData saveData, Script script, WordData wordData) {
     this.slowPrint(script.getLine(index), saveData.getTextSpeed());
     System.out.println();
-    this.slowPrint(wordData.getWords(), saveData.getTextSpeed());
+    this.slowPrint(this.getWords(wordData), saveData.getTextSpeed());
     System.out.println();
     System.out.print("input: ");
     
@@ -39,6 +39,24 @@ public class Runner {
         this.slowPrint("That is not an option, try again: ̈", saveData.getTextSpeed());
       }
     }
+  }
+
+  public String getWords(WordData wordData) {
+    String words = "Your options are: ";
+    for (int i=0; i<wordData.getLength(); i++) {
+      if (wordData.getActive(i)) {
+        if (i == wordData.getLength()-1) {
+          words += "and " + wordData.getShownWord(i);
+        } else {
+          if (i == wordData.getLength()-2){
+            words += wordData.getShownWord(i) + ", ";       
+          } else {
+            words += wordData.getShownWord(i) + " ";
+          }
+        }
+      }
+    }
+    return words;
   }
 
   public void run(SaveData saveData, Script script, WordData wordData) {
