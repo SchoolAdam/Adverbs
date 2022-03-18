@@ -20,7 +20,7 @@ public class Runner {
     }
   }
 
-  // potentially can be broken down even further
+  // potentially can be broken down further
   private void runScript(int index, SaveData saveData, Script script, WordData wordData) {
     this.slowPrint(script.getLine(index), saveData.getTextSpeed());
     System.out.println();
@@ -47,12 +47,8 @@ public class Runner {
       if (wordData.getActive(i)) {
         if (i == wordData.getLength()-1) {
           words += "and " + wordData.getShownWord(i);
-        } else {
-          if (i == wordData.getLength()-2){
+        } else { // doesn't work right if two but don't really care
             words += wordData.getShownWord(i) + ", ";       
-          } else {
-            words += wordData.getShownWord(i) + " ";
-          }
         }
       }
     }

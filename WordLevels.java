@@ -37,18 +37,23 @@ public class WordLevels {
     return active;
   }
 
+  // current thing to do
+  public void giveXP() {
+    
+  }
+
   // not utilized yet, will be expanded
-  private void LevelUp() {
-    level++;
+  private void LevelUp(int level) {
+    this.level = level;
     shownWord = words[level];
   }
 
-  //filler xp values for now, would break if it would level up twice
+  //filler xp values for now
   public void checkXP() {
-    if (this.level == 0 && this.xp > 10) {
-      this.LevelUp();
-    } else if (this.level == 1 && this.xp > 100) {
-      this.LevelUp();
+    if (this.xp > 10) {
+      this.LevelUp(1);
+    } else if (this.xp > 100) {
+      this.LevelUp(2);
     }
   }
 

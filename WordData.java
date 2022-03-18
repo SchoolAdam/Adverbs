@@ -5,17 +5,14 @@ public class WordData {
   // switch it to a 2D array? move to SaveData? set values here?
   private WordLevels wrd[] = new WordLevels[3];
 
-  public WordData() {
-  }
-
   // I don't like how the information is handled; works for now but its not very clean.
   // is there a way to take an array as a parameter in one line? 
-  public void initalizeWords() {
+  public void initializeWords() {
     String a[] = {"briskly", "quickly", "instantly"};
     WordLevels briskly = new WordLevels(a);
     wrd[0] = briskly;
     String b[] = {"hesitantly", "slowly", "sluggishly"};
-    WordLevels hesitantly = new WordLevels(b, false);
+    WordLevels hesitantly = new WordLevels(b, true);
     wrd[1] = hesitantly;
     String c[] = {"obviously"};
     WordLevels obviously = new WordLevels(c);
@@ -33,12 +30,17 @@ public class WordData {
   public Boolean getActive(int i) {
     return wrd[i].getIfActive();
   }
+  
+  public void manageXP() {
+    
+  }
 
   // checking each word if its in the array and active
   public Boolean checkWord(String word) {
     for (int i=0; i<this.getLength(); i++) {
       if (wrd[i].getIfActive()) { 
         if (word.equals(wrd[i].getActiveWord())) {
+          
           return true;
         }
       }

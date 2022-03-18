@@ -2,7 +2,7 @@ public class Script {
   private String lns[] = new String[2];
 
   // Something to draw from a txt file?
-  public Script() {
+  public void initializeScript() {
     lns[0] = "I ___ do it.";
     lns[1] = "And I ___ do it again.";
   }
