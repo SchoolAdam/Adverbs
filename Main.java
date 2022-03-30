@@ -2,6 +2,7 @@
 Note that this is all a proof of concept for now
 
 Next thing: XP Tracking
+After that: Limiting options shown by each sentence
 */
 public class Main {
   public static void main(String[] args) {
